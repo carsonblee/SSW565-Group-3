@@ -1,0 +1,550 @@
+\chapter{User Requirements \\
+\small{\textit{Document for university course registration system}}
+\index{User Requirements} 
+\index{Chapter!UserRequirements}
+\label{Chapter::UserRequirements}}
+\small
+This university\index{University} course registration system will serve as the centralized platform for students, faculty, and administrators (Registrar) to manage the \gls{course} registration process. Each user group will have distinct features and functionality tailored to their needs, allowing for seamless coordination between course \gls{enrollment}, scheduling, and resource allocation.
+
+% This just feels like something he wants
+\begin{figure}[h]
+    \centering
+    \scalebox{0.8}{\includegraphics{Book-SSW564/eps/Other/HW4 University Users.eps}}
+    \caption{\FigureLabel{HW4Stakeholders} University\index{University} course registration system stakeholder diagram}
+\end{figure}
+
+% This isn't mentioned in the assignment, but feels like he would want this
+\section{User Classification}
+In this university\index{University} course registration system, there are three (3) main types of users: students, faculty, and registrar. While all users, each has their own responsibilities, requirements, and uses for the system. 
+\begin{enumerate}
+    \item{\textbf{Students} \textit{(approximately 10,000)}}
+    
+    The largest user class, students need to use the system to view, select, and register for courses. Students will select courses run by faculty. They need to be able to search for various courses, see their requirements, and register for said courses. Students will also need to check their course schedule once registered. Students will most likely use the system a few times per semester. Students must have between 12 and 20 credits per semester to be considered full-time.
+    
+    \item{\textbf{Faculty} \textit{(approximately 400)}}
+
+    Faculty are responsible for running multiple courses each semester. They can offer multiple different courses during the same semester with different settings. Faculty should also be able to see the students enrolled in their specific courses, assign grades to them, and override requirements for students. Faculty also need to access the system to see their teaching schedule which includes details like days, times, and locations. Faculty are limited to teaching up to four (4) courses per semester.
+    
+    \item{\textbf{Faculty} \textit{(approximately 25)}}
+
+    Registrars are responsible for allocating resources to specific courses, scheduling time and locations, manage prerequisites for courses, and limit how many courses a student can take and a faculty member can teach in a given semester. They are also interested in the \gls{reporting} and analytics of the overall registration system to better \gls{allocate} resources and attention to suit the needs of the university\index{University}.
+    
+\end{enumerate}
+
+\section{Requirements}
+
+%--------------------------------
+%----- PART A: STUDENT REQS -----
+%--------------------------------
+\subsection{Student Requirements}
+These requirements for the university\index{University} course registration system are designed with the student user class in mind. \TableReference{StudentUserRequirements} further outlines each of these requirements in more detail.
+\begin{enumerate}
+
+\item{\textbf{\RequirementName{reqkUser}{Course Enrollment Management}:}}
+
+Students need the ability to search for courses, \gls{addcourses} to their schedule, and \gls{dropcourses} within the allowed timeframe.
+
+\item{\textbf{\RequirementName{reqkUserConstraint}{Prerequisite and Eligibility Check}:}}
+
+The system should automatically check for \gls{prereq} and other \gls{eligibility} criteria before allowing course registration.
+
+\item{\textbf{\RequirementName{reqkUser}{Waitlist Functionality}:}}
+
+When a course reaches capacity, students should be able to join a \gls{waitlist} and be automatically enrolled if a spot becomes available.
+
+\item{\textbf{\RequirementName{reqkUser}{Class Schedule Overview}:}}
+
+Students need a clear view of their current schedule, including class times, locations, and any \gls{potentialconflicts} with other registered courses.
+
+\item{\textbf{\RequirementName{reqkUserConstraint}{Credit Hour Limit Enforcement}:}}
+
+The system should enforce a minimum and maximum number of \gls{credithours} that students can enroll in per semester barring approved exceptions.
+
+\end{enumerate}
+
+%--------------------------------
+%----- PART B: FACULTY REQS -----
+%--------------------------------
+\subsection{Faculty Requirements}
+These requirements for the university\index{University} course registration system are designed with the faculty user class in mind. Table \TableReference{FacultyUserRequirements} further outlines each of these requirements in more detail.
+
+\begin{enumerate}
+
+\item{\textbf{\RequirementName{reqkUser}{Course Management}:}}
+
+Faculty should be able to create and modify the courses they offer each semester, including setting prerequisites, course capacity, and grading \gls{policies}.
+
+\item{\textbf{\RequirementName{reqkUser}{Student Enrollment Monitoring}:}}
+
+Faculty should be able to view and manage the roster of students enrolled in their course(s), including the ability to approve overrides for capacity or prerequisites.
+
+\item{\textbf{\RequirementName{reqkUser}{Class Schedule Availability}:}}
+
+Faculty should have access to their teaching schedule, including course times, classroom locations, and alerts for any conflicts between responsibilities.
+
+\item{\textbf{\RequirementName{reqkUser}{Waitlist Management}:}}
+
+Faculty should have the option to manually manage or prioritize students on the \gls{waitlist}, approving or denying \gls{waitlist} \gls{enrollment}s if necessary.
+
+\item{\textbf{\RequirementName{reqkUserConstraint}{Credit Hour Limits for Teaching}:}}
+
+Faculty should be subject to a minimum/maximum teaching load per semester, with the ability to get approved for not being within that range.
+
+\end{enumerate}
+
+%----------------------------------
+%----- PART C: REGISTRAR REQS -----
+%----------------------------------
+\subsection{Registrar Requirements}
+These requirements for the university\index{University} course registration system are designed with the registrar user class in mind. \TableReference{RegistrarUserRequirements} further outlines each of these requirements in more detail.
+
+\begin{enumerate}
+
+\item{\textbf{\RequirementName{reqkUser}{Course Resource Allocation}:}}
+
+The registrar should be able to \gls{allocate} classrooms, assign instructors, and manage time slots for all courses being offered.
+
+\item{\textbf{\RequirementName{reqkUser}{Enrollment Capacity Management}:}}
+
+The system should allow the registrar to manage and adjust course capacities, adding or removing seats based on demand and resources.
+
+\item{\textbf{\RequirementName{reqkUser}{Prerequisite and Eligibility Management}:}}
+
+The registrar should have oversight of prerequisite rules and \gls{eligibility} criteria, ensuring they are correctly enforced across the system.
+
+\item{\textbf{\RequirementName{reqkUser}{Course and Instructor Scheduling}:}}
+
+The registrar must \gls{ensure} there are no scheduling conflicts across the university\index{University}, including class times and room assignments for both students and faculty.
+
+\item{\textbf{\RequirementName{reqkUser}{Reporting and Analytics}:}}
+
+The registrar should have access to real-time \gls{reporting} on course \gls{enrollment}s, \gls{waitlist}s, and resource allocation to make decisions about course offerings each semester.
+
+\end{enumerate}
+
+%-------------------------------
+%----- PART D: CONSTRAINTS -----
+%-------------------------------
+\section{Constraints}
+
+\begin{enumerate}
+
+\item{\textbf{Credit Hour Limits (Students):}}
+
+Students are limited to enrolling in a minimum of 9 and a maximum of 20 \gls{credithours} per semester. Exceptions may be granted with special approval from the administration.
+
+\item{\textbf{Teaching Load (Faculty):}}
+
+Faculty are limited to teaching a minimum of 1 and a maximum of 4 courses per semester. Requests to exceed this limit must be approved by the registrar.
+
+\item{\textbf{Room and Time Slot Availability (Registrar):}}
+
+Courses are subject to \gls{availability} of physical classroom space and time slots. The registrar must \gls{ensure} there are no conflicts in scheduling based on room \gls{availability} and faculty teaching times.
+
+\end{enumerate}
+
+%-------------------------------------
+%----- PART E: CONFLICT EXAMPLES -----
+%-------------------------------------
+\section{Conflict Examples}
+
+\begin{enumerate}
+
+\item{\textbf{Student vs Teacher:}}
+
+A student wants to enroll in a course but has not completed \gls{prereq}. The faculty member is unwilling to make an exception.
+
+Resolution: The system should offer the student an appeal process to the department or provide a means for the faculty to override the \gls{prereq} if there is a compelling reason, such as equivalent experience.
+
+\item{\textbf{Student vs Registrar:}}
+
+A student wants to register for more than the allowed 20 \gls{credithours} per semester, but the system blocks the registration.
+
+Resolution: The registrar can create an exception process where students can submit a request for overload approval. If approved, the system would allow additional course registration.
+
+\item{\textbf{Teacher vs Registrar:}}
+
+A faculty member wants to schedule a course during a specific time in a preferred classroom, but the registrar has already \gls{allocate}d that room for another course.
+
+Resolution: The system should allow the faculty member and registrar to collaborate on alternative time slots or room assignments, using the system's scheduling tools to find a solution that works for both parties.
+
+\end{enumerate}
+
+
+% LONGTABLE INFO: https://www.overleaf.com/learn/latex/Tables#:~:text=The%20behaviour%20of%20longtable%20is,eX%20page%2Dbreaking%20algorithm.
+
+% --------------------------
+% -- STUDENT REQUIREMENTS --
+% --------------------------
+\small
+\begin{longtable}{|p{10.5cm}|p{2cm}|p{2cm}|}
+    \caption{Student User Requirements for University\index{University} Course Registration System \TableLabel{StudentUserRequirements} \label{Table::StudentRequirements}}\\
+
+    \hline
+    \textbf{Requirement} & \textbf{Priority} & \textbf{Use Case(s)} \\
+    \hline 
+    \endfirsthead
+    
+    \multicolumn{3}{c}{\tablename\ \thetable\ -- \textit{Continued from previous page}}\\
+    \hline
+    \textbf{Requirement} & \textbf{Priority} & \textbf{Use Case(s)} \\
+    \hline
+    \endhead
+    
+    \multicolumn{3}{r}{\tablename\ \thetable\ -- \textit{Continued on next page}} \\
+    \endfoot
+    \endlastfoot
+    
+\begin{reqkUser}[
+\RequirementName{reqkUser}{Course Enrollment Management}]
+\RequirementLabel{reqkUser}{Course Enrollment Management}
+Students need the ability to search for courses, \gls{addcourses} to their schedule, and \gls{dropcourses} within the allowed timeframe.
+\end{reqkUser}
+\begin{itemize}
+    \item{\textbf{Need:} This is an essential part of the user requirements} 
+    \item{\textbf{Stability:} This is not going to change}
+    \item{\textbf{Source:} The description of the system on behalf of the student}
+    \item{\textbf{Clarity:} 
+    \begin{itemize}
+        \item Course being courses offered for the currently selected semester
+        \item Timeframe being the time window in which registration is open
+        \item Students should be allowed to search and view all courses offered for the selected semester
+    \end{itemize}}
+    \item{\textbf{Verifiability:} Student user is able to view, search, add, and drop courses for the semester selected}
+    \item{\textbf{Any Other Attribute:} None}
+\end{itemize}
+& 
+\gls{must}
+&
+% \UseCaseReference{ucFirstUseCase}
+\\ 
+\hline
+
+\begin{reqkUserConstraint}[
+\RequirementName{reqkUserConstraint}{Prerequisite and Eligibility Check}]
+\RequirementLabel{reqkUserConstraint}{Prerequisite and Eligibility Check}
+The system should automatically check for \gls{prereq} and other \gls{eligibility} criteria before allowing course registration.
+\end{reqkUserConstraint}
+\begin{itemize}
+    \item{\textbf{Need:} This is the basis for a logical university\index{University} course registration system.} 
+    \item{\textbf{Stability:} This constraint itself may change to allow for exceptions to the rules.}
+    \item{\textbf{Source:} This comes from a rule the university\index{University} has about what order specific courses can be taken.}
+    \item{\textbf{Clarity:} The \gls{prereq} check should be done when the student tries to add or register for the course. These \gls{prereq} are defined by the registrar.}
+    \item{\textbf{Verifiability:} A student with the required \gls{prereq} can register for a course that has them, but a student without the \gls{prereq} cannot register.}
+    \item{\textbf{Any Other Attribute:} None}
+\end{itemize}
+& 
+\gls{must}
+&
+% \UseCaseReference{ucFirstUseCase}
+\\ 
+\hline
+
+\begin{reqkUser}[
+\RequirementName{reqkUser}{Waitlist Functionality}]
+\RequirementLabel{reqkUser}{Waitlist Functionality}
+When a course reaches capacity, students should be able to join a \gls{waitlist} and be automatically enrolled if a spot becomes available.
+\end{reqkUser}
+\begin{itemize}
+    \item{\textbf{Need:} This should be implemented as soon as possible to better the student user experience.} 
+    \item{\textbf{Stability:} This requirement may be subject to change if we have to modify a standard queue to allow for prioritization.}
+    \item{\textbf{Source:} This comes from the desire of students to wait for a full course for an open seat to become available.}
+    \item{\textbf{Clarity:} Registrar sets the course capacity and enables/disables the \gls{waitlist} option. Automatically means when a student registered in the full course drops which registers the first student in the \gls{waitlist} for the open seat.}
+    \item{\textbf{Verifiability:} A student tries to register for a full course, so they join the \gls{waitlist} instead. When another student drops that full course, the student on the \gls{waitlist} is automatically registered for the course.}
+    \item{\textbf{Any Other Attribute:} None.}
+\end{itemize}
+& 
+\gls{could}
+&
+% \UseCaseReference{ucFirstUseCase}
+\\ 
+\hline
+
+\begin{reqkUser}[
+\RequirementName{reqkUser}{Class Schedule Overview}]
+\RequirementLabel{reqkUser}{Class Schedule Overview}
+Students need a clear view of their current schedule, including class times, locations, and any \gls{potentialconflicts} with other registered courses.
+\end{reqkUser}
+\begin{itemize}
+    \item{\textbf{Need:} This is pretty essential for students to help them understand what courses they're registered for, when, and where.} 
+    \item{\textbf{Stability:} This may change as attributes about the course may be added or dropped as the system develops.}
+    \item{\textbf{Source:} This comes from the need for students to view their course schedule for the semester once they register.}
+    \item{\textbf{Clarity:} Current schedule meaning courses currently registered for in a specific semester, and \gls{potentialconflicts} being any issues that might arise from registered course being at the same time as one another.}
+    \item{\textbf{Verifiability:} A student registers for specific courses and then is able to view their schedule of courses they registered for.}
+    \item{\textbf{Any Other Attribute:} None}
+\end{itemize}
+& 
+\gls{should}
+&
+% \UseCaseReference{ucFirstUseCase}
+\\ 
+\hline
+
+\begin{reqkUserConstraint}[
+\RequirementName{reqkUserConstraint}{Credit Hour Limit Enforcement}]
+\RequirementLabel{reqkUserConstraint}{Credit Hour Limit Enforcement}
+The system should enforce a minimum and maximum number of \gls{credithours} that students can enroll in per semester barring approved exceptions.
+\end{reqkUserConstraint}
+\begin{itemize}
+    \item{\textbf{Need:} This is essential for the basic university course registration system.} 
+    \item{\textbf{Stability:} This constraint is not subject to change.}
+    \item{\textbf{Source:} This comes from the university's limit on how many course credits a student can take during a semester.}
+    \item{\textbf{Clarity:} The minimum and maximum number of \gls{credithours} is set by the registrar. Only the registrar can approve exceptions to this rule.}
+    \item{\textbf{Verifiability:} A student is registered for less than the minimum \gls{credithours} and deemed as a part-time student by the system. A student is registered for the maximum \gls{credithours} and tries to register for another course and the system rejects the request.}
+    \item{\textbf{Any Other Attribute:} None.}
+\end{itemize}
+& 
+\gls{must}
+&
+% \UseCaseReference{ucFirstUseCase}
+\\ 
+\hline
+    
+\end{longtable}
+
+% --------------------------
+% -- FACULTY REQUIREMENTS --
+% --------------------------
+\small
+\begin{longtable}{|p{10.5cm}|p{2cm}|p{2cm}|}
+    \caption{Faculty User Requirements for University\index{University} Course Registration System \TableLabel{FacultyUserRequirements} \label{Table::FacultyRequirements}}\\
+    
+    \hline
+    \textbf{Requirement} & \textbf{Priority} & \textbf{Use Case(s)} \\
+    \hline 
+    \endfirsthead
+    
+    \multicolumn{3}{c}{\tablename\ \thetable\ -- \textit{Continued from previous page}}\\
+    \hline
+    \textbf{Requirement} & \textbf{Priority} & \textbf{Use Case(s)} \\
+    \hline
+    \endhead
+    
+    \multicolumn{3}{r}{\tablename\ \thetable\ -- \textit{Continued on next page}} \\
+    \endfoot
+    \endlastfoot
+
+\begin{reqkUser}[
+\RequirementName{reqkUser}{Course Management}]
+\RequirementLabel{reqkUser}{Course Management}
+Faculty should be able to create and modify the courses they offer each semester, including setting prerequisites, course capacity, and grading \gls{policies}.
+\end{reqkUser}
+\begin{itemize}
+    \item{\textbf{Need:} Essential for faculty to manage their courses.} 
+    \item{\textbf{Stability:} May change due to university \gls{policies}.}
+    \item{\textbf{Source:} Comes from the faculty's role in creating and managing the courses.}
+    \item{\textbf{Clarity:} Clear guidelines set in place on what aspects can be managed by faculty.}
+    \item{\textbf{Verifiability:} Faculty can create and modify course \gls{parameters}.}
+    \item{\textbf{Any Other Attribute:} None}
+\end{itemize}
+& 
+\gls{must}
+&
+% \UseCaseReference{ucFirstUseCase}
+\\ 
+\hline
+
+\begin{reqkUser}[
+\RequirementName{reqkUser}{Student Enrollment Monitoring}]
+\RequirementLabel{reqkUser}{Student Enrollment Monitoring}
+Faculty should be able to view and manage the roster of students enrolled in their course(s), including the ability to approve overrides for capacity or prerequisites.
+\end{reqkUser}
+\begin{itemize}
+    \item{\textbf{Need:} Essential for faculty to oversee student \gls{enrollment} and class rosters.} 
+    \item{\textbf{Stability:} Very stable but can change due to university \gls{enrollment} processes.}
+    \item{\textbf{Source:} Comes from faculty \gls{responsibility} to manage their course \gls{enrollment}.}
+    \item{\textbf{Clarity:} Faculty can clearly view the rosters and manage them for each of their classes.}
+    \item{\textbf{Verifiability:} System confirms the faculty's ability to approve capacity or overrides and update their rosters.}
+    \item{\textbf{Any Other Attribute:} None}
+\end{itemize}
+& 
+\gls{must}
+&
+% \UseCaseReference{ucFirstUseCase}
+\\ 
+\hline
+
+\begin{reqkUser}[
+\RequirementName{reqkUser}{Class Schedule Availability}]
+\RequirementLabel{reqkUser}{Class Schedule Availability}
+Faculty should have access to their teaching schedule, including course times, classroom locations, and alerts for any conflicts between responsibilities.
+\end{reqkUser}
+\begin{itemize}
+    \item{\textbf{Need:} Essential for faculty to be aware of their teaching schedule.} 
+    \item{\textbf{Stability:} Very stable, only can change because of semester schedules.}
+    \item{\textbf{Source:} Derived from the faculty's need to access and manage their teaching responsibilities.}
+    \item{\textbf{Clarity:} Clearly accessible schedules along with all the information for those classes.}
+    \item{\textbf{Verifiability:} Schedules are accessible and conflicts are \gls{flagged} by the system.}
+    \item{\textbf{Any Other Attribute:} None}
+\end{itemize}
+& 
+\gls{must}
+&
+% \UseCaseReference{ucFirstUseCase}
+\\ 
+\hline
+
+\begin{reqkUser}[
+\RequirementName{reqkUser}{Waitlist Management}]
+\RequirementLabel{reqkUser}{Waitlist Management}
+Faculty should have the option to manually manage or prioritize students on the\gls{waitlist}, approving or denying \gls{waitlist} \gls{enrollment}s if necessary.
+\end{reqkUser}
+\begin{itemize}
+    \item{\textbf{Need:} Essential for faculty to control waitlisted students and manage their class capacities.} 
+    \item{\textbf{Stability:} Stable unless the waitlist \gls{policies} are revised.}
+    \item{\textbf{Source:} Comes from the faculty's \gls{responsibility} to manage student access to courses.}
+    \item{\textbf{Clarity:} Clear guidelines on prioritization as well as approving/denying students who are on the waitlist.}
+    \item{\textbf{Verifiability:} Faculty-approved waitlist changes are updated in the system and the involved students are notified.}
+    \item{\textbf{Any Other Attribute:} None}
+\end{itemize}
+& 
+\gls{must}
+&
+% \UseCaseReference{ucFirstUseCase}
+\\ 
+\hline
+
+\begin{reqkUserConstraint}[
+\RequirementName{reqkUserConstraint}{Credit Hour Limits for Teaching}]
+\RequirementLabel{reqkUserConstraint}{Credit Hour Limits for Teaching}
+Faculty should be subject to a minimum/maximum teaching load per semester, with the ability to get approved for not being within that range.
+\end{reqkUserConstraint}
+\begin{itemize}
+    \item{\textbf{Need:} Essential to \gls{ensure} faculty teaching loads remain within university \gls{policies}.} 
+    \item{\textbf{Stability:} Stable since \gls{policies} aren't likely to change regarding credits.}
+    \item{\textbf{Source:} Derived from \gls{policies} on teaching loads.}
+    \item{\textbf{Clarity:} Registrar defines min/max teaching loads with clear guidelines. }
+    \item{\textbf{Verifiability:} The system enforces the credit hour limits barring exceptions.}
+    \item{\textbf{Any Other Attribute:} None}
+\end{itemize}
+& 
+\gls{must}
+&
+% \UseCaseReference{ucFirstUseCase}
+\\ 
+\hline
+    
+\end{longtable}
+% ----------------------------
+% -- REGISTRAR REQUIREMENTS --
+% ----------------------------
+\small
+\begin{longtable}{|p{10.5cm}|p{2cm}|p{2cm}|}
+    \caption{Registrar User Requirements for University\index{University} Course Registration System \TableLabel{RegistrarUserRequirements} \label{Table::RegistrarRequirements}}\\
+    
+    \hline
+    \textbf{Requirement} & \textbf{Priority} & \textbf{Use Case(s)} \\
+    \hline 
+    \endfirsthead
+    
+    \multicolumn{3}{c}{\tablename\ \thetable\ -- \textit{Continued from previous page}}\\
+    \hline
+    \textbf{Requirement} & \textbf{Priority} & \textbf{Use Case(s)} \\
+    \hline
+    \endhead
+    
+    \multicolumn{3}{r}{\tablename\ \thetable\ -- \textit{Continued on next page}} \\
+    \endfoot
+    \endlastfoot
+
+\begin{reqkUser}[
+\RequirementName{reqkUser}{Course Resource Allocation}]
+\RequirementLabel{reqkUser}{Course Resource Allocation}
+The registrar should be able to \gls{allocate} classrooms, assign instructors, and manage time slots for all courses being offered.
+\end{reqkUser}
+\begin{itemize}
+    \item{\textbf{Need:} Essential for the registrar to \gls{allocate} resources effectively.} 
+    \item{\textbf{Stability:} Changes only as resource \gls{availability} changes.}
+    \item{\textbf{Source:} Derived from the registrar's role in managing classroom and instructor assignments.}
+    \item{\textbf{Clarity:} Clear guidelines on how resources are \gls{allocate}d to courses.}
+    \item{\textbf{Verifiability:} System reflects updated room assignments and information for instructors and time slots.}
+    \item{\textbf{Any Other Attribute:} None}
+\end{itemize}
+& 
+\gls{must}
+&
+% \UseCaseReference{ucFirstUseCase}
+\\ 
+\hline
+
+\begin{reqkUser}[
+\RequirementName{reqkUser}{Enrollment Capacity Management}]
+\RequirementLabel{reqkUser}{Enrollment Capacity Management}
+The system should allow the registrar to manage and adjust course capacities, adding or removing seats based on demand and resources.
+\end{reqkUser}
+\begin{itemize}
+    \item{\textbf{Need:} Essential for the registrar to manage and adjust course capacities.} 
+    \item{\textbf{Stability:} Stable but can change with shifts in demand or resource \gls{availability}.}
+    \item{\textbf{Source:} Based on institutional \gls{policies}.}
+    \item{\textbf{Clarity:} Clear processes for adjusting course capacities.}
+    \item{\textbf{Verifiability:} System reflects changes to course capacities and adjusts \gls{enrollment} accordingly.}
+    \item{\textbf{Any Other Attribute:} None}
+\end{itemize}
+& 
+\gls{must}
+&
+% \UseCaseReference{ucFirstUseCase}
+\\ 
+\hline
+
+\begin{reqkUser}[
+\RequirementName{reqkUser}{Prerequisite and Eligibility Management}]
+\RequirementLabel{reqkUser}{Prerequisite and Eligibility Management}
+The registrar should have oversight of prerequisite rules and \gls{eligibility} criteria, ensuring they are correctly enforced across the system.
+\end{reqkUser}
+\begin{itemize}
+    \item{\textbf{Need:} Essential for ensuring prerequisites and \gls{eligibility} are enforced.} 
+    \item{\textbf{Stability:} Can change due to course structure adjustments.}
+    \item{\textbf{Source:} Comes from the university's academic \gls{policies} on course prerequisites.}
+    \item{\textbf{Clarity:} Clear definition of prerequisites for courses.}
+    \item{\textbf{Verifiability:} System verifies prerequisite enforcement and \gls{ensure}s \gls{eligibility} criteria are met for all students.}
+    \item{\textbf{Any Other Attribute:} None}
+\end{itemize}
+& 
+\gls{must}
+&
+% \UseCaseReference{ucFirstUseCase}
+\\ 
+\hline
+
+\begin{reqkUser}[
+\RequirementName{reqkUser}{Course and Instructor Scheduling}]
+\RequirementLabel{reqkUser}{Course and Instructor Scheduling}
+The registrar must \gls{ensure} there are no scheduling conflicts across the universityn\index{University}, including class times and room assignments for both students and faculty.
+\end{reqkUser}
+\begin{itemize}
+    \item{\textbf{Need:} Essential to prevent scheduling conflicts across the school.} 
+    \item{\textbf{Stability:} Very stable but can adjust with changes in course offerings per semester.}
+    \item{\textbf{Source:} Derived from the registrar's role in managing scheduling.}
+    \item{\textbf{Clarity:} Clear scheduling rules and conflict notifications for course times and room assignments.}
+    \item{\textbf{Verifiability:} System checks and flags conflicts to \gls{ensure} proper scheduling for students and faculty.}
+    \item{\textbf{Any Other Attribute:} None}
+\end{itemize}
+& 
+\gls{must}
+&
+% \UseCaseReference{ucFirstUseCase}
+\\ 
+\hline
+
+\begin{reqkUser}[
+\RequirementName{reqkUser}{Reporting and Analytics}]
+\RequirementLabel{reqkUser}{Reporting and Analytics}
+The registrar should have access to real-time \gls{reporting} on course \gls{enrollment}s, \gls{waitlist}s, and resource allocation to make decisions about course offerings each semester.
+\end{reqkUser}
+\begin{itemize}
+    \item{\textbf{Need:} Essential for real-time \gls{reporting} on \gls{enrollment}s and resource allocation for making decisions.} 
+    \item{\textbf{Stability:} Stable but can change based on evolving data needs.}
+    \item{\textbf{Source:} Comes from the registrar's need to make informed decisions regarding course offerings.}
+    \item{\textbf{Clarity:} Clear access to reports and analytics for \gls{enrollment}, waitlists, and resource management.}
+    \item{\textbf{Verifiability:} System generates accurate reports in real-time.}
+    \item{\textbf{Any Other Attribute:} None}
+\end{itemize}
+& 
+\gls{must}
+&
+% \UseCaseReference{ucFirstUseCase}
+\\ 
+\hline
+    
+\end{longtable}

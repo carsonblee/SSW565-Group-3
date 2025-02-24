@@ -1,0 +1,487 @@
+\chapter{Use Cases \& User Stories \\
+\small{\textit{-- Charles Villa and Carson Lee}}
+\index{use cases} 
+\index{user stories} 
+\index{Chapter!Use Cases \& User Stories}
+\label{Chapter::UseCasesAndUserStories}}
+
+\normalsize
+\section{Team Breakdown}
+We had to do this homework with just our group due to us both not being available for last week's class where groups formed pairs. So, instead of us collaborating with another group we will have the first group be Charles and the other being Carson. 
+
+\textbf{Group-05a:} Charles Villa
+
+\textbf{Group-05b:} Carson Lee
+
+\subsection{Team Roles}
+\begin{longtable}{|p{6cm}|p{3cm}|p{3cm}|}
+    \caption{Team Role Breakdown \label{Table::TeamRoles}}\\
+    \hline
+     & \centering\textbf{User} & \centering\textbf{Developer} \arraybackslash\\ 
+    \hline
+    \textbf{Project A:} A bike ride sharing system/app. You may research NYC's Citibike as a model (or any other bike ride sharing you maybe familiar with). & \centering{Group 5a} & \centering{Group 5b} \arraybackslash \\
+    \hline
+    \textbf{Project B:} a car ride sharing system/app.  For example Lyft or Uber. &  \centering{Group 5b} & \centering{Group 5a} \arraybackslash \\
+    \hline
+\end{longtable}
+
+%--- PART 4 ---
+\section{User Stories}
+User stories for Project A collected from interviewing Group 5a.
+\begin{enumerate}
+    \item I want to be able to make an account and see what bikes are available in my area. This is so I don't have to deal with the hassle when I get there and I can just use my account to grab it and go. I'd also like to be able to plan out my ride and costs beforehand. 
+    \item When I'm riding the bike I'd like to report any issues with it directly through either the app or the bike to help maintain the quality of the bikes. I'd also like to be able to add or read through the ride history if needed.
+    \item After the ride I'd like to be able to pay easily and securely. I'd also like a receipt or statement sent through email that I can put in my records in case there was a payment issue. I'd also like to be able to review and give feedback on my experience.  
+\end{enumerate}
+
+
+%--- PART 5 ---
+\section{User Requirements}
+User requirements extracted from the user stories from Project A: a bike ride sharing system/app. 
+
+\subsection{Rider Requirements}
+User requirements for the Rider user class based off the user stories of a bike ride sharing system/app.
+% LONGTABLE INFO: https://www.overleaf.com/learn/latex/Tables#:~:text=The%20behaviour%20of%20longtable%20is,eX%20page%2Dbreaking%20algorithm.
+
+% --------------------------
+% --- RIDER REQUIREMENTS ---
+% --------------------------
+\small
+\begin{longtable}{|p{10.5cm}|p{2cm}|p{2cm}|}
+    \caption{Rider User Requirements for Group 5a \label{Table::RiderRequirements}}\\
+
+    \hline
+    \textbf{Requirement} & \textbf{Priority} & \textbf{Use Case(s)} \\
+    \hline
+    \endfirsthead
+    
+    \multicolumn{3}{c}{\tablename\ \thetable\ -- \textit{Continued from previous page}}\\
+    \hline
+    \textbf{Requirement} & \textbf{Priority} & \textbf{Use Case(s)} \\
+    \hline
+    \endhead
+    
+    \multicolumn{3}{r}{\tablename\ \thetable\ -- \textit{Continued on next page}} \\
+    \endfoot
+
+    \endlastfoot
+
+
+\begin{reqkUser}[
+\RequirementName{reqkUser}{Create Account}]
+\RequirementLabel{reqkUser}{Create Account}
+Users must be able to create an account with email or social media.
+\end{reqkUser}
+& 
+\gls{must}
+&
+\UseCaseReference{Before Riding}
+\\ 
+\hline
+
+\begin{reqkUser}[
+\RequirementName{reqkUser}{Locate Bikes}]
+\RequirementLabel{reqkUser}{Locate Bikes}
+Users should be able to locate nearby bikes using GPS.
+\end{reqkUser}
+& 
+\gls{should}
+&
+\UseCaseReference{Before Riding}
+\\ 
+\hline
+
+\begin{reqkUser}[
+\RequirementName{reqkUser}{View Availability}]
+\RequirementLabel{reqkUser}{View Availability}
+Users must be able to view bike availability.
+\end{reqkUser}
+& 
+\gls{must}
+&
+\UseCaseReference{Before Riding}
+\\ 
+\hline
+
+\begin{reqkUser}[
+\RequirementName{reqkUser}{View Pricing}]
+\RequirementLabel{reqkUser}{View Pricing}
+Users should be able to view pricing details before riding. 
+\end{reqkUser}
+& 
+\gls{should}
+&
+\UseCaseReference{Before Riding}
+\\ 
+\hline
+
+\begin{reqkUser}[
+\RequirementName{reqkUser}{Reserve Bike}]
+\RequirementLabel{reqkUser}{Reserve Bike}
+Users could reserve a bike for a specific time in advance. 
+\end{reqkUser}
+& 
+\gls{could}
+&
+\UseCaseReference{Before Riding}
+\\ 
+\hline
+
+\begin{reqkUser}[
+\RequirementName{reqkUser}{Report Bike}]
+\RequirementLabel{reqkUser}{Report Bike}
+Users must be able to report a bike that is damaged or missing. 
+\end{reqkUser}
+& 
+\gls{must}
+&
+\UseCaseReference{After Riding}
+\\ 
+\hline
+
+\begin{reqkUser}[
+\RequirementName{reqkUser}{Ride History}]
+\RequirementLabel{reqkUser}{Ride History}
+Users should have access to their ride history and add to it. 
+\end{reqkUser}
+& 
+\gls{should}
+&
+\UseCaseReference{After Riding}
+\\ 
+\hline
+
+\begin{reqkUser}[
+\RequirementName{reqkUser}{Provide Feedback}]
+\RequirementLabel{reqkUser}{Provide Feedback}
+Users could provide feedback on their riding experience. 
+\end{reqkUser}
+& 
+\gls{could}
+&
+\UseCaseReference{After Riding}
+\\ 
+\hline
+
+\begin{reqkUser}[
+\RequirementName{reqkUser}{Make Payment}]
+\RequirementLabel{reqkUser}{Make Payment}
+Users must be able to pay for their rides securely. 
+\end{reqkUser}
+& 
+\gls{must}
+&
+\UseCaseReference{After Riding}
+\\ 
+\hline
+
+\begin{reqkUser}[
+\RequirementName{reqkUser}{Receive Receipt}]
+\RequirementLabel{reqkUser}{Receive Receipt}
+Users should receive a receipt for their rides via email.
+\end{reqkUser}
+& 
+\gls{should}
+&
+\UseCaseReference{After Riding}
+\\ 
+\hline
+
+\begin{reqkUser}[
+\RequirementName{reqkUser}{Cancel/Exit}]
+\RequirementLabel{reqkUser}{Cancel/Exit}
+Users should be able to cancel or exit an almost any point in the app.
+\end{reqkUser}
+& 
+\gls{should}
+&
+\UseCaseReference{Before Riding},\newline
+\UseCaseReference{After Riding}
+\\ 
+\hline
+    
+\end{longtable}
+
+%-------------------------------------------
+%----- USE CASE DIAGRAM SPECIFICATIONS -----
+%-------------------------------------------
+\normalsize
+\section{Use Cases}
+Derived from the user requirements, the use cases describe the system flow to satisfy the requirements. Use cases can satisfy multiple requirements, a single requirement, or even no requirements (which is known as gold plating).
+
+\subsection{Use Case Diagrams}
+
+\begin{figure}[H]
+\centering
+\scalebox{0.8}{\includegraphics{Book-SSW564/eps/HW7/BeforeRide.eps}}
+\caption{\label{Figure::UCDiagram::BeforeRiding} Before Ride Use Case \UseCaseReference{Before Riding} Diagram}
+\end{figure}
+
+\small
+\begin{longtable}{|p{3cm}|p{3cm}|p{3cm}|p{3cm}|}
+    \caption{Use Case \UseCaseReference{Before Riding} Diagram Specification\label{Table::UCDSpecs::BeforeRiding}}\\
+    \endfirsthead
+    \multicolumn{4}{c}{\tablename\ \thetable\ -- \textit{Continued from previous page}}\\
+    \hline
+    \endhead
+    %\hline
+    \multicolumn{4}{r}{\tablename\ \thetable\ -- \textit{Continued on next page}} \\
+    \endfoot
+    %\hline
+    \endlastfoot
+    \hline
+% ----------------------------------------------------------------------------------------
+\multicolumn{4}{|p{12cm}|}{
+    \begin{useCase}[\UseCaseName{Before Riding}]
+	\UseCaseLabel{Before Riding}
+	\index{UseCase!\UseCaseName{Before Riding}}
+		This diagram demonstrates what a user will do prior to riding their bike.
+    \end{useCase}
+}
+\\ \hhline{|=:=:=:=|}
+\textbf{Primary\newline Actors:} & 
+    User
+&
+\textbf{Secondary\newline Actors:} &
+    None
+\\ \hline
+% ----------------------------------------------------------------------------------------
+\textbf{Basic Flow:} & \multicolumn{3}{p{9cm}|}{
+    \begin{enumerate}[topsep=0pt,itemsep=0pt,parsep=0pt,partopsep=0pt,leftmargin=12pt]
+        \item User registers an account before being able to do anything else.
+        \item User can use an interactive map to search for nearby bikes.
+        \item User then can select bikes to check their availability.
+        \item User then can view the pricing details for that bike.
+        \item The User then can decide to select/reserve that specific bike.
+        \item The User can exit/cancel at any point.
+    \end{enumerate}
+}\\
+\hline
+% ----------------------------------------------------------------------------------------
+\textbf{Alternate Flows:} & \multicolumn{3}{p{9cm}|}{
+    None, this is the only way to obtain a bike to ride.
+} \\
+\hline
+% ----------------------------------------------------------------------------------------
+\textbf{Pre-Conditions:} & \multicolumn{3}{p{9cm}|}{
+    \begin{enumerate}[topsep=0pt,itemsep=0pt,parsep=0pt,partopsep=0pt,leftmargin=12pt]
+        \item User has either Wi-Fi or cellular connection.
+        \item User has the bike rental app installed.
+    \end{enumerate}
+}\\
+\hline
+% ----------------------------------------------------------------------------------------
+\textbf{Post-Conditions:} & \multicolumn{3}{p{9cm}|}{
+    \begin{enumerate}[topsep=0pt,itemsep=0pt,parsep=0pt,partopsep=0pt,leftmargin=12pt]
+        \item User account is created and stored in the system.
+        \item User can view available bikes on the interactive map.
+        \item User can check the availability of selected bikes.
+        \item User can view pricing details for bikes.
+        \item User can reserve a selected bike.
+        \item The user can cancel/exit at any previous point. 
+    \end{enumerate}
+}\\
+\hline
+% ----------------------------------------------------------------------------------------
+\textbf{Special\newline Requirements:} & \multicolumn{3}{l|}{None}\\
+\hline
+\end{longtable}
+
+\begin{figure}[H]
+\centering
+\scalebox{0.8}{\includegraphics{Book-SSW564/eps/HW7/AfterRide.eps}}
+\caption{\label{Figure::UCDiagram::AfterRiding} After Ride Use Case \UseCaseReference{After Riding} Diagram}
+\end{figure}
+
+\begin{longtable}{|p{3cm}|p{3cm}|p{3cm}|p{3cm}|}
+    \caption{Use Case \UseCaseReference{After Riding} Diagram Specification\label{Table::UCDSpecs::AfterRiding}}\\
+    \endfirsthead
+    \multicolumn{4}{c}{\tablename\ \thetable\ -- \textit{Continued from previous page}}\\
+    \hline
+    \endhead
+    %\hline
+    \multicolumn{4}{r}{\tablename\ \thetable\ -- \textit{Continued on next page}} \\
+    \endfoot
+    %\hline
+    \endlastfoot
+    \hline
+% ----------------------------------------------------------------------------------------
+\multicolumn{4}{|p{12cm}|}{
+    \begin{useCase}[\UseCaseName{After Riding}]
+	\UseCaseLabel{After Riding}
+	\index{UseCase!\UseCaseName{After Riding}}
+		This diagram demonstrates what a user can do after riding their bike.
+    \end{useCase}
+}
+\\ \hhline{|=:=:=:=|}
+\textbf{Primary\newline Actors:} & 
+    User
+&
+\textbf{Secondary\newline Actors:} &
+    None
+\\ \hline
+% ----------------------------------------------------------------------------------------
+\textbf{Basic Flow:} & \multicolumn{3}{p{9cm}|}{
+    \begin{enumerate}[topsep=0pt,itemsep=0pt,parsep=0pt,partopsep=0pt,leftmargin=12pt]
+        \item User has to pay after the bike ride.
+        \item After paying the user will be prompted if they need a ride receipt.
+        \item After the receipt prompt they will be asked to provide feedback.
+        \item The User can exit/cancel at any point except for the payment.
+    \end{enumerate}
+}\\
+\hline
+% ----------------------------------------------------------------------------------------
+\textbf{Alternate Flows:} & \multicolumn{3}{p{9cm}|}{
+    \begin{enumerate}[topsep=0pt,itemsep=0pt,parsep=0pt,partopsep=0pt,leftmargin=12pt]
+        \item User is given the option to report a damaged or missing bike, but then must go back to the basic flow.
+        \item User is given the option to access their ride history, but then must go back to the basic flow.
+        \item User can cancel at any point and go back to the basic flow.
+    \end{enumerate}
+} \\
+\hline
+% ----------------------------------------------------------------------------------------
+\textbf{Pre-Conditions:} & \multicolumn{3}{p{9cm}|}{
+    \begin{enumerate}[topsep=0pt,itemsep=0pt,parsep=0pt,partopsep=0pt,leftmargin=12pt]
+        \item User has either Wi-Fi or cellular connection.
+        \item User has the bike rental app installed.
+        \item User has completed their ride.
+    \end{enumerate}
+}\\
+\hline
+% ----------------------------------------------------------------------------------------
+\textbf{Post-Conditions:} & \multicolumn{3}{p{9cm}|}{
+    \begin{enumerate}[topsep=0pt,itemsep=0pt,parsep=0pt,partopsep=0pt,leftmargin=12pt]
+        \item User has done a report or moved past it to the payment flow.
+        \item User has accessed ride history or moved past it to the payment flow.
+        \item User has paid for the ride.
+        \item User can get a ride receipt.
+        \item User can provide feedback.
+        \item The user can cancel/exit at any previous point except payment. 
+    \end{enumerate}
+}\\
+\hline
+% ----------------------------------------------------------------------------------------
+\textbf{Special\newline Requirements:} & \multicolumn{3}{l|}{None}\\
+\hline
+\end{longtable}
+
+
+\normalsize
+\subsection{Use Case Table}
+The following table lists all the use cases for the system and what requirements they meet as well as a description of what they do. To prevent gold-plating all use cases must be mapped to at least one requirement.
+% --------------------------
+% ----- USE CASE TABLE -----
+% --------------------------
+\small
+\begin{longtable}{|p{10.5cm}|p{2.5cm}|}
+    \caption{Use Cases Table \label{Table::UseCasesTable}}\\
+    
+    \hline
+    \textbf{Use Case and Description} & \textbf{Requirements} \\
+    \hline 
+    \endfirsthead
+
+    \multicolumn{2}{c}{\tablename\ \thetable\ -- \textit{Continued from previous page}}\\
+    \hline
+    \textbf{Use Case and Description} & \textbf{Requirements} \\
+    \hline
+    \endhead
+
+    \multicolumn{2}{r}{\tablename\ \thetable\ -- \textit{Continued on next page}} \\
+    \endfoot
+    \endlastfoot
+
+    \UseCaseName{Before Riding} (\UseCaseReference{Before Riding}) Is what the rider user can or will do prior to renting and riding their bike.
+    &
+    \RequirementReference{reqkUser}{Create Account},
+    \RequirementReference{reqkUser}{Locate Bikes},
+    \RequirementReference{reqkUser}{View Availability},
+    \RequirementReference{reqkUser}{View Pricing},
+    \RequirementReference{reqkUser}{Reserve Bike},
+    \RequirementReference{reqkUser}{Cancel/Exit}
+    \\ 
+    \hline
+
+    \UseCaseName{After Riding} (\UseCaseReference{After Riding}) Is what the rider user can or will do after renting and riding their bike.
+    &
+    \RequirementReference{reqkUser}{Report Bike},
+    \RequirementReference{reqkUser}{Ride History},
+    \RequirementReference{reqkUser}{Provide Feedback},
+    \RequirementReference{reqkUser}{Make Payment},
+    \RequirementReference{reqkUser}{Receive Receipt},
+    \RequirementReference{reqkUser}{Cancel/Exit}
+    \\ 
+    \hline
+\end{longtable}
+
+%-----------------------------
+%----- ACTIVITY DIAGRAMS -----
+%-----------------------------
+\subsection{Activity Diagrams}
+
+\begin{figure}[H]
+\centering
+\scalebox{0.8}{\includegraphics{Book-SSW564/eps/HW7/UserRegistration.eps}}
+\caption{\label{Figure::UserRegistration} \RequirementName{reqkUser}{Create Account}  (\RequirementReference{reqkUser}{Create Account}) Activity Diagram}
+\end{figure}
+
+\begin{figure}[H]
+\centering
+\scalebox{0.8}{\includegraphics{Book-SSW564/eps/HW7/LocateBike.eps}}
+\caption{\label{Figure::LocateBike} \RequirementName{reqkUser}{Locate Bikes} (\RequirementReference{reqkUser}{Locate Bikes}) Activity Diagram}
+\end{figure}
+
+\begin{figure}[H]
+\centering
+\scalebox{0.8}{\includegraphics{Book-SSW564/eps/HW7/CheckBikeAvailability.eps}}
+\caption{\label{Figure::CheckBikeAvailability} \RequirementName{reqkUser}{View Availability} (\RequirementReference{reqkUser}{View Availability}) Activity Diagram}
+\end{figure}
+
+\begin{figure}[H]
+\centering
+\scalebox{0.8}{\includegraphics{Book-SSW564/eps/HW7/ViewPricingDetails.eps}}
+\caption{\label{Figure::ViewPricingDetails} \RequirementName{reqkUser}{View Pricing} (\RequirementReference{reqkUser}{View Pricing}) Activity Diagram}
+\end{figure}
+
+\begin{figure}[H]
+\centering
+\scalebox{0.8}{\includegraphics{Book-SSW564/eps/HW7/ReserveBike.eps}}
+\caption{\label{Figure::ReserveBike} \RequirementName{reqkUser}{Reserve Bike} (\RequirementReference{reqkUser}{Reserve Bike}) Activity Diagram}
+\end{figure}
+
+\begin{figure}[H]
+\centering
+\scalebox{0.8}{\includegraphics{Book-SSW564/eps/HW7/ReportBike.eps}}
+\caption{\label{Figure::ReportDamagedOrMissingBike} \RequirementName{reqkUser}{Report Bikes} (\RequirementReference{reqkUser}{Report Bike}) Activity Diagram}
+\end{figure}
+
+\begin{figure}[H]
+\centering
+\scalebox{0.8}{\includegraphics{Book-SSW564/eps/HW7/RideHistory.eps}}
+\caption{\label{Figure::AccessRideHistory} \RequirementName{reqkUser}{Ride History} (\RequirementReference{reqkUser}{Ride History}) Activity Diagram}
+\end{figure}
+
+\begin{figure}[H]
+\centering
+\scalebox{0.8}{\includegraphics{Book-SSW564/eps/HW7/RideFeedback.eps}}
+\caption{\label{Figure::ProvideFeedback} \RequirementName{reqkUser}{Provide Feedback} (\RequirementReference{reqkUser}{Provide Feedback}) Activity Diagram}
+\end{figure}
+
+\begin{figure}[H]
+\centering
+\scalebox{0.8}{\includegraphics{Book-SSW564/eps/HW7/MakePayment.eps}}
+\caption{\label{Figure::MakePayment} \RequirementName{reqkUser}{Make Payment} (\RequirementReference{reqkUser}{Make Payment}) Activity Diagram}
+\end{figure}
+
+\begin{figure}[H]
+\centering
+\scalebox{0.8}{\includegraphics{Book-SSW564/eps/HW7/ReceiveRideReceipt.eps}}
+\caption{\label{Figure::ReceiveRideReceipt} \RequirementName{reqkUser}{Receive Receipt} (\RequirementReference{reqkUser}{Receive Receipt}) Activity Diagram}
+\end{figure}
+
+\begin{figure}[H]
+\centering
+\scalebox{0.8}{\includegraphics{Book-SSW564/eps/HW7/CancelExit.eps}}
+\caption{\label{Figure::CancelExit} \RequirementName{reqkUser}{Cancel/Exit} (\RequirementReference{reqkUser}{Cancel/Exit}) Activity Diagram}
+\end{figure}
+

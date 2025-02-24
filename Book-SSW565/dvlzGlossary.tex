@@ -1,0 +1,75 @@
+\label{Chapter::Glossary}
+\newglossaryentry{must}
+{	name={MustHave},
+	description={This defines the first highest priority requirement.
+	All of the tasks, requirements, or anything that is marked this way are
+	build in the current version}
+}
+
+\newglossaryentry{should}
+{	name={ShouldHave},
+	description={This defines the second highest priority requirement. The system should implement 
+	all of the tasks, requirements, or anything that is marked this way, but if 
+	resources are limited, it can be left out of the current version.
+	Build in next version}
+}
+
+\newglossaryentry{could}
+{	name={CouldHave},
+	description={This defines the third highest priority requirement.The system could implement 
+	all of the tasks, requirements, or anything that is marked this way, but if 
+	resources are limited, it can be left out of the current and next version.
+	Build in two versions from now}
+}
+
+\newglossaryentry{would}
+{	name={WouldHave},
+	description={This defines the lowest priority requirement.  The system would like to implement 
+all of the tasks, requirements, or anything that is marked this way, but only
+if resources are available. It can be left out of all future versions}
+}
+
+\newglossaryentry{course}
+{	name={course},
+	description={A specific instance (with a time, location, and professor) of a class offered at a university}
+}
+
+\newglossaryentry{stakeholder}
+{   name={stakeholder},
+        description={A particular member/party that has a particular interest and/or investment in the outcome of an organization, business, or project}
+}
+
+\newglossaryentry{source}
+{	name={source},
+	description={The location or actor that sends the stimulus. \\ \textit{Example: "Unexpected server failure" → Addressed by Active Redundancy}}
+}
+
+\newglossaryentry{stimulus}
+{	name={stimulus},
+	description={The acting factor or input on the system}
+}
+
+\newglossaryentry{environment}
+{	name={environment},
+	description={The operating condition of the system when the stimulus occurs}
+}
+
+\newglossaryentry{artifact}
+{	name={artifact},
+	description={The system components used to implement availability tactics. \\ \textit{Example: "Monitoring tools" → Supports Heartbeat, and Ping/Echo}}
+}
+
+\newglossaryentry{response}
+{	name={availability response},
+	description={Specific tactics used to detect, prevent, or recover from faults. \\ \textit{Example: Detect faults: Monitor, Heartbeat, Exception Detection Recover from faults: Rollback, Retry, Reconfiguration Prevent faults: Predictive Model, Removal from Service}}
+}
+
+\newglossaryentry{responseMeasure}
+{	name={response measure},
+	description={The result of applying tactics. \\ \textit{Example: Ensuring system remains available by automatically switching to backup servers (Passive/Active Redundancy), Divide requests on multiple servers, Applying scaling principles}}
+}
+
+\newglossaryentry{CRC card}
+{   name={CRC card},
+        description={A class-responsibility-collaboration card is a brainstorming tool used in the design of object-oriented software}
+}
