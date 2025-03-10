@@ -13,30 +13,33 @@
     \hline
     \textbf{Responsibilities} & \textbf{Collaborators} \\
     \hline
-    - Attend classes & Bicycle (for John) \\
-    - Use a mode of transportation & Walking (for Maria) \\
+    - Attend class,  & School\\
+      use a transport mode to go to & Bike \\
+      school & Shoes \\
     \hline
 \end{tabular}
 \end{center}
 
-\subsection{Bicycle Class}
+\subsection{John Class}
 \begin{center}
 \begin{tabular}{|p{5cm}|p{5cm}|}
     \hline
     \textbf{Responsibilities} & \textbf{Collaborators} \\
     \hline
-    - Transport John to school & Student (John) \\
+    - Ride a bike to school & School \\
+    & Bike\\
     \hline
 \end{tabular}
 \end{center}
-\subsection{Walking Class}
+
+\subsection{Maria Class}
 \begin{center}
 \begin{tabular}{|p{5cm}|p{5cm}|}
     \hline
     \textbf{Responsibilities} & \textbf{Collaborators} \\
     \hline
-    - Enable Maria to walk to school & Student (Maria) \\
-    - Depend on shoes for walking & Shoes \\
+    - Walk to school using shoes & School \\
+     & Shoes \\
     \hline
 \end{tabular}
 \end{center}
@@ -47,12 +50,33 @@
     \hline
     \textbf{Responsibilities} & \textbf{Collaborators} \\
     \hline
-    - Be worn by Maria before walking & Student (Maria) \\
-    - Support walking functionality & Walking \\
+    -Assist in walking to school & Maria \\
     \hline
 \end{tabular}
 \end{center}
-\end{description}
+
+\subsection{Bike Class}
+\begin{center}
+\begin{tabular}{|p{5cm}|p{5cm}|}
+    \hline
+    \textbf{Responsibilities} & \textbf{Collaborators} \\
+    \hline
+    - Provide a means of transportation & John \\
+    \hline
+\end{tabular}
+\end{center}
+
+\subsection{School Class}
+\begin{center}
+\begin{tabular}{|p{5cm}|p{5cm}|}
+    \hline
+    \textbf{Responsibilities} & \textbf{Collaborators} \\
+    \hline
+    - Receive students  & Student\\
+    \hline
+\end{tabular}
+\end{center}
+ \end{description}
  
 \section{Use Case Diagram}
 The \textbf{Use Case Diagram} was designed to illustrate how \textbf{John and Maria} interact with the system. It focuses on their different methods of transportation:
@@ -63,12 +87,12 @@ The \textbf{Use Case Diagram} was designed to illustrate how \textbf{John and Ma
 \end{itemize}
 This diagram effectively captures the \textbf{functional perspective} of how students go to school.
 
-
-\begin{figure}[h]
+\begin{figure}[H]
     \centering
     \includegraphics[scale=0.75]{Book-SSW565/jpg/ArchitectureModeling/Use Case Diagram1.jpg}
-    \caption{\label{Figure:::Use Case Diagram}Use Case Diagram}
+    \caption{\label{Figure::Use Case Diagram}Use Case Diagram}
 \end{figure}
+
 
 \section{Object Diagram}
 The \textbf{Object Diagram} models a \textbf{specific scenario} of the user story. It represents actual instances of the classes at a given moment:
@@ -81,7 +105,7 @@ The \textbf{Object Diagram} models a \textbf{specific scenario} of the user stor
 
 The thought process behind this diagram was to provide \textbf{a snapshot} of how objects interact in the real world, helping to validate the correctness of the class relationships before formalizing them in the \textbf{Class Diagram}.
 
-\begin{figure}[h]
+\begin{figure}[H]
     \centering
     \includegraphics[scale=0.75]{Book-SSW565/jpg/ArchitectureModeling/Object Diagram1.jpg}
     \caption{\label{Figure::Object Diagram}Object Diagram}
@@ -90,9 +114,10 @@ The thought process behind this diagram was to provide \textbf{a snapshot} of ho
 \section{Class Diagram}
 The \textbf{Class Diagram} is the most detailed and structured representation of the system. It was designed using \textbf{three key relationships}:
 \begin{itemize}
-    \item \textbf{Generalization (Inheritance):} \texttt{Bike} and \texttt{Walking} are both types of \texttt{Transportation}, making use of \textbf{inheritance} to reduce redundancy.
-    \item \textbf{Aggregation:} A \texttt{Student} \textbf{uses} a \texttt{Transportation} method but does not permanently own it (represented with a \textbf{hollow diamond}).
-    \item \textbf{Composition:} \texttt{Walking} \textbf{requires} \texttt{Shoes} (depicted with a \textbf{filled diamond}), meaning a \texttt{Walking} instance \textbf{cannot exist} without \texttt{Shoes}.
+    \item \textbf{Generalization (Inheritance):} \texttt{Bike} and \texttt{Shoes} are both types of \texttt{TransportMode}, making use of \textbf{inheritance} to reduce redundancy.
+    \item \textbf{Generalization (Inheritance):} \texttt{John} and \texttt{Maria} are both types of \texttt{Student}, making use of \textbf{inheritance} to reduce redundancy.
+    \item \textbf{Aggregation:} A \texttt{Student} \textbf{uses} a \texttt{TransportMode} method but does not permanently own it (represented with a \textbf{hollow diamond}).
+    \item \textbf{Composition:} \texttt{Student} \textbf{requires} \texttt{School} (depicted with a \textbf{filled diamond}), meaning a \texttt{Student} instance \textbf{cannot exist} without \texttt{School}.
 \end{itemize}
 
 This diagram refines the \textbf{structure of the system} by making clear distinctions between \textbf{inheritance, dependencies, and ownership relationships}, forming the blueprint for implementing the system in code.
@@ -100,7 +125,7 @@ This diagram refines the \textbf{structure of the system} by making clear distin
 
 \begin{figure}[h]
     \centering
-    \includegraphics[scale=0.6]{Book-SSW565/jpg/ArchitectureModeling/Class Diagram1.jpg}
+    \includegraphics[scale=0.6]{Book-SSW565/jpg/ArchitectureModeling/Class_Diagram.jpg}
     \caption{\label{Figure::Class Diagram}Class Diagram}
 \end{figure}
 
